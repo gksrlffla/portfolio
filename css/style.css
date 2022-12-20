@@ -16,16 +16,6 @@
 	border-radius: 10px;
 	background-color: rgba(0,0,0,0.1);
 }
-@media only screen and (max-width: 720px){
-	::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	background-color: rgba(0,0,0,0.8);
-	}
-	::-webkit-scrollbar-track {
-		border-radius: 10px;
-		background-color: rgba(0,0,0,0.1);
-	}
-}
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
 	margin: 0;
 	padding: 0;
@@ -215,7 +205,7 @@ body {
 	height: 100vh;
 	background-color: #000000cc;
 	transition: 0.5s;
-	z-index: 1000;
+	z-index: 9999;
 	overflow-y: auto;
 }
 #index .mobile.active {
@@ -656,7 +646,7 @@ body {
 	position: fixed;
 	right: 60px;
 	bottom: 40px;
-	z-index: 9999;
+	z-index: 1000;
 }
 #index .resume.active a {
 	background-color: rgba(0,0,0,1);
