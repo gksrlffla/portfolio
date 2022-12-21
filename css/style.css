@@ -1,10 +1,3 @@
-.clearfix::before, .clearfix::after {
-	content: "";
-	display: block;
-}
-.clearfix::after {
-	clear: both;
-}
 ::-webkit-scrollbar {
 	width: 6px;
 }
@@ -802,40 +795,43 @@ body {
 	margin-top: 7em;
 }
 #about .inner .content .profile {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
 	padding: 0 2.5em;
 	box-sizing: border-box;
 }
 #about .inner .content .profile .photo {
 	margin-top: 20px;
-	float: left;
 	width: 40%;
-	border-radius: 30px 0 30px 0;
-	overflow: hidden;
 	opacity: 0;
 	transform: translateY(50px);
 	transition: opacity 0.75s, transform 0.75s;
 }
 #about .inner .content .profile .photo img {
 	max-width: 100%;
+	border-radius: 30px 0 30px 0;
+	overflow: hidden;
 }
-#about .inner .content .profile .desc_left {
-	float: left;
+#about .inner .content .profile .desc_area {
+	width: 56%;
+}
+#about .inner .content .profile .desc_area .desc1 {
 	margin-top: 0px;
-	margin-left: 4%;
-	width: 48%;
+	width: 100%;
 	font-size: 0.938em;
 	opacity: 0;
 	transform: translateY(50px);
 	transition: opacity 0.75s, transform 0.75s;
 	transition-delay: 0.6s;
 }
-#about .inner .content .profile .desc_left .bottom {
+#about .inner .content .profile .desc_area .desc1 .bottom {
 	margin-top: 45px;
 }
-#about .inner .content .profile .desc_right {
-	float: right;
+#about .inner .content .profile .desc_area .desc2 {
 	margin-top: 45px;
-	width: 56%;
+	width: 100%;
 	font-size: 0.938em;
 	opacity: 0;
 	transform: translateY(50px);
@@ -843,8 +839,8 @@ body {
 	transition-delay: 1.2s;
 }
 #about.active .inner .content .profile .photo,
-#about.active .inner .content .profile .desc_left, 
-#about.active .inner .content .profile .desc_right {
+#about.active .inner .content .profile .desc_area .desc1, 
+#about.active .inner .content .profile .desc_area .desc2 {
 	opacity: 1;
 	transform: translateY(0);
 }
@@ -853,8 +849,17 @@ body {
 	line-height: 3em;
 	font-weight: 800;
 }
+#about .inner .content .profile dd {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
 #about .inner .content .profile dd p {
 	display: inline-block;
+	width: calc(100% - 75px);
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;	
 	line-height: 1.8em;
 	color: #231f20;
 }
@@ -868,25 +873,6 @@ body {
 	vertical-align:top;
 	width: 70px;
 	font-weight: 600;
-}
-#about .inner .content .profile dd::before,
-#about .inner .content .profile dd::after {
-	content: "";
-	display: block;
-}
-#about .inner .content .profile dd::after {
-	clear: both;
-}
-#about .inner .content .profile dd p{
-	float: right;
-	width: calc(100% - 70px);
-	overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;	
-}
-#about .inner .content .profile dd p.subtitle{
-	float: left;
-	width: 70px;
 }
 @media only screen and (max-width: 1280px) {
 	#page1 .desc h2 {
@@ -911,24 +897,26 @@ body {
 	#about .inner .content {
 		margin-top: 6em;
 	}
+	#about .inner .content .profile {
+		flex-direction: column;
+	}
 	#about .inner .content .profile .photo {
-		float: none;
-		width: auto;
+		width: 100%;
+		margin-top: 0;
 		text-align: center;
 	}
 	#about .inner .content .profile .photo img {
 		width: 100%;
 	}
-	#about .inner .content .profile .desc_left {
-		float: none;
-		width: auto;
+	#about .inner .content .profile .desc_area {
+		width: 100%;
+	}
+	#about .inner .content .profile .desc_area .desc1 {
 		margin-left: 0;
 		margin-top: 30px;
 		font-size: 0.875em;
 	}
-	#about .inner .content .profile .desc_right {
-		float: none;
-		width: auto;
+	#about .inner .content .profile .desc_area .desc2 {
 		font-size: 0.875em;
 	}
 }
