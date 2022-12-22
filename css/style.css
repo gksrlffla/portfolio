@@ -1079,7 +1079,7 @@ body {
    overflow-y: auto;
    font-size: 1em;
 }
-#portfolio .inner {
+#portfolio > .inner {
    padding-top: 7.5em;
 }
 #portfolio .inner .project_label {
@@ -1470,7 +1470,6 @@ body {
 }
 @media only screen and (max-width: 540px) {
 	#portfolio .mobile .inner .photo ul li {
-		float: none;
 		width: 100%;
 	}
 	#portfolio .mobile .inner .photo ul li:first-child,
