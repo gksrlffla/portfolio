@@ -139,8 +139,6 @@
 	function clickMoving(){
 		if (deviceStatus == "mobile" || moving == true) return;
 
-		let clickMovingN=mainN;
-
 		if(mainN < mainWheelTotal){
 			if(document.documentElement.scrollTop == 0){
 				indexWheelMoving();
